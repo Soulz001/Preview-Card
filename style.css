@@ -1,0 +1,118 @@
+:root {
+  --bgc: hsl(0, 0%, 95%);
+  --paragraphs: hsla(0, 0%, 100%, 0.75);
+  --card-1: hsl(31, 77%, 52%);
+  --card-2: hsl(184, 100%, 22%);
+  --card-3: hsl(179, 100%, 13%);
+  --padding-styles: 2rem;
+  --flex-container: flex;
+  --flow: column;
+  --fleet: space-between;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: georgia;
+}
+/*global styles*/
+button {
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  background: var(--bgc);
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 5rem;
+}
+button:hover {
+  background: transparent;
+  color: hsl(0, 100%, 100%);
+  outline: 2px solid var(--bgc);
+}
+p:only-child {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: auto;
+}
+/*DESKTOP FIRST STYLES*/
+main {
+  height: 100vh;
+  display: var(--flex-container);
+  justify-content: center;
+  align-items: center;
+  background: var(--bgc);
+}
+.container {
+  display: grid;
+  grid-auto-flow: var(--flow);
+  width: calc(100% - 500px);
+}
+.container > div {
+  padding: var(--padding-styles);
+  display: var(--flex-container);
+  flex-direction: var(--flow);
+  justify-content: var(--fleet);
+}
+.card__1 {
+  background: var(--card-1);
+  border-radius: 1rem 0 0 1rem;
+}
+.card__2 {
+  background: var(--card-2);
+}
+.card__3 {
+  background: var(--card-3);
+  border-radius: 0 1rem 1rem 0;
+}
+.first-part {
+  display: var(--flex-container);
+  flex-direction: var(--flow);
+}
+.first-part :is(h2, p) {
+  margin-top: 1.5rem;
+}
+.btn__1 {
+  color: var(--card-1);
+}
+.btn__2 {
+  color: var(--card-2);
+}
+.btn__3 {
+  color: var(--card-3);
+}
+h2 + p {
+  color: var(--paragraphs);
+  line-height: 1.5;
+  font-size: 15px;
+}
+div + h2 {
+  color: var(--bgc);
+}
+/*MEDIA QUERIES*/
+@media (max-width: 576px) {
+  .container {
+    grid-auto-flow: row;
+    height: calc(100vh - 100px);
+    width: calc(100% - 50px);
+  }
+  .card__1 {
+    border-radius: 1rem 1rem 0 0;
+  }
+  .card__3 {
+    border-radius: 0 0 1rem 1rem;
+  }
+  button {
+    margin-top: 1.5rem;
+  }
+  h2 + p {
+    margin-top: 3rem;
+  }
+  button {
+    margin-top: 5rem;
+  }
+}
