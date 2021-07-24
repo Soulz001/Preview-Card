@@ -33,7 +33,7 @@ button:hover {
   color: hsl(0, 100%, 100%);
   outline: 2px solid var(--bgc);
 }
-p:only-child {
+footer > p {
   font-weight: 600;
   font-size: 1.2rem;
   text-align: center;
@@ -114,5 +114,8 @@ div + h2 {
   }
   button {
     margin-top: 5rem;
+  }
+  footer > p {
+    margin-top: 13rem;
   }
 }
